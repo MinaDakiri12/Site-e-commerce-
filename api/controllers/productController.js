@@ -11,7 +11,7 @@ exports.addProduct = async (req, res) => {
         const saved = await product.save();
         if (saved) return res.status(201).json({ message: 'data saved!', product });
     } catch (error) {
-        return res.status(500).json({ err: 'error seve' })
+        return res.status(500).json({ err: 'error save' })
 
     }
 };
