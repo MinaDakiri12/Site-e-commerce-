@@ -9,7 +9,7 @@ exports.userRegister = async (req, res) => {
         const user = new User({
             ...req.body
         })
-        //chek email
+        //check email
         const EmailExist = await User.findOne({ email: req.body.email });
         if (EmailExist) return res.status(400).json({ message: "email already exist!" });
         // ***********hashPassword
@@ -44,6 +44,6 @@ exports.loginUser = async (req, res) => {
 
 
 exports.logoutController = (req, res) => {
-    return res.status(200).clearCookie('jwt').json({ isAuth: false, role: '', loged: 'out' });
+    return res.status(200).clearCookie('jwt').json({ isAuth: false, role: '', logged: 'out' });
 }
 
